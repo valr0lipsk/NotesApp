@@ -1,0 +1,162 @@
+@import "null";
+
+$fontMain: "Fredoka", sans-serif;
+
+$clrMain: #b2cca3;
+$clrBlock: #4a8b91;
+$clrAccent: #fc9f5b;
+$clrLightAccent: #ffd5b6;
+$clrLight: #e7e2df;
+
+%text-area {
+  padding: 10px;
+  background-color: $clrLight;
+}
+
+body {
+  font-family: $fontMain;
+  background-color: $clrMain;
+}
+
+.root {
+  width: 100%;
+  min-height: 100%;
+}
+
+.main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 72px 0;
+
+  .main__add {
+    background-color: $clrBlock;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+
+    .add__form {
+      width: 100%;
+      margin-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+
+      .form__input {
+        @extend %text-area;
+        width: 90%;
+        min-height: 80px;
+        font-size: 16px;
+        margin-right: 20px;
+      }
+
+      .form__btn {
+        background: url("./img/add.png");
+        width: 80px;
+        height: 80px;
+        padding: 0;
+      }
+    }
+
+    .add__tags {
+      width: 90%;
+      min-height: 80px;
+      background-color: $clrLight;
+      padding: 16px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .tags__tag {
+        height: 30px;
+        display: inline-flex;
+        align-items: center;
+        background-color: $clrLightAccent;
+        padding: 5px;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        color: $clrAccent;
+        cursor: pointer;
+
+        & > p {
+          margin-right: 5px;
+        }
+
+        & > button {
+          background: url("./img/basic_cancel.png");
+          background-size: cover;
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+
+  .main__button {
+    background-color: $clrBlock;
+    color: $clrLight;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+  }
+
+  .main__notes {
+    display: flex;
+    flex-wrap: wrap;
+
+    .notes__note {
+      width: 20%;
+      margin-right: 5%;
+      min-height: 250px;
+      background-color: $clrLight;
+    }
+
+    .note__header {
+      background-color: $clrBlock;
+      height: 2rem;
+      padding: 2px;
+      display: flex;
+      justify-content: flex-end;
+
+      .header__btn {
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+
+        &:first-of-type {
+          background: url("./img/edit.png");
+          background-size: cover;
+        }
+        &:last-of-type {
+          background: url("./img/cancel.png");
+          background-size: cover;
+        }
+      }
+    }
+
+    .note__body {
+      padding: 20px;
+    }
+
+    .notes__note.editable {
+      width: 20%;
+      margin-right: 5%;
+      min-height: 250px;
+      background-color: $clrLight;
+
+      .note__header {
+        .header__btn {
+          &:first-of-type {
+            background: url("./img/save.png");
+            background-size: cover;
+          }
+        }
+      }
+
+      .note__body {
+        & > textarea {
+          @extend %text-area;
+          width: 100%;
+          border: 1px $clrLightAccent solid;
+        }
+      }
+    }
+  }
+}

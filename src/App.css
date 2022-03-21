@@ -1,38 +1,231 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:focus,
+:active {
+  outline: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+.main .main__notes .notes__note.editable .note__body > textarea, .main .main__add .add__form .form__input {
+  padding: 10px;
+  background-color: #e7e2df;
+}
+
+body {
+  font-family: "Fredoka", sans-serif;
+  background-color: #b2cca3;
+}
+
+.root {
+  width: 100%;
+  min-height: 100%;
+}
+
+.main {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 72px 0;
+}
+.main .main__add {
+  background-color: #4a8b91;
+  padding: 40px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+.main .main__add .add__form {
+  width: 100%;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
-
-.App-link {
-  color: #61dafb;
+.main .main__add .add__form .form__input {
+  width: 90%;
+  min-height: 80px;
+  font-size: 16px;
+  margin-right: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main .main__add .add__form .form__btn {
+  background: url("./img/add.png");
+  width: 80px;
+  height: 80px;
+  padding: 0;
+}
+.main .main__add .add__tags {
+  width: 90%;
+  min-height: 80px;
+  background-color: #e7e2df;
+  padding: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.main .main__add .add__tags .tags__tag {
+  height: 30px;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #ffd5b6;
+  padding: 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  color: #fc9f5b;
+  cursor: pointer;
+}
+.main .main__add .add__tags .tags__tag > p {
+  margin-right: 5px;
+}
+.main .main__add .add__tags .tags__tag > button {
+  background: url("./img/basic_cancel.png");
+  background-size: cover;
+  width: 20px;
+  height: 20px;
+}
+.main .main__button {
+  background-color: #4a8b91;
+  color: #e7e2df;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.main .main__notes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.main .main__notes .notes__note {
+  width: 20%;
+  margin-right: 5%;
+  min-height: 250px;
+  background-color: #e7e2df;
+}
+.main .main__notes .note__header {
+  background-color: #4a8b91;
+  height: 2rem;
+  padding: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+.main .main__notes .note__header .header__btn {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+.main .main__notes .note__header .header__btn:first-of-type {
+  background: url("./img/edit.png");
+  background-size: cover;
+}
+.main .main__notes .note__header .header__btn:last-of-type {
+  background: url("./img/cancel.png");
+  background-size: cover;
+}
+.main .main__notes .note__body {
+  padding: 20px;
+}
+.main .main__notes .notes__note.editable {
+  width: 20%;
+  margin-right: 5%;
+  min-height: 250px;
+  background-color: #e7e2df;
+}
+.main .main__notes .notes__note.editable .note__header .header__btn:first-of-type {
+  background: url("./img/save.png");
+  background-size: cover;
+}
+.main .main__notes .notes__note.editable .note__body > textarea {
+  width: 100%;
+  border: 1px #ffd5b6 solid;
 }
