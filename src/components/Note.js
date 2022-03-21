@@ -21,17 +21,6 @@ const Note = ({ id, text }) => {
     }
   };
 
-  useEffect(() => {
-    const formattedText = newText;
-    formattedText.split(" ").forEach((elem, index) => {
-      if (elem.startsWith("#")) {
-        formattedText.split(" ").splice(index - 1, 0, "<b>");
-        formattedText.split(" ").splice(index + 1, 0, "<b/>");
-      }
-    });
-    setNewText(formattedText);
-  }, [newText]);
-
   if (edit) {
     return (
       <div className="notes__note editable">
