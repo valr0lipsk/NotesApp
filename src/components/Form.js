@@ -6,7 +6,11 @@ import Tag from "./Tag";
 
 export const addNewTag = (text, tags, dispatch) => {
   const val = text.trim().split(" ");
-  if (val.length === 1 && val[0].startsWith("#")) {
+  if (
+    val.length === 1 &&
+    val[0].startsWith("#") &&
+    !Object.keys(tags).find((key) => tags[key].text === val[0])
+  ) {
     return dispatch(addTag({ text: val[0] }));
   }
   for (let i = val.length - 1; i > 0; i--) {
