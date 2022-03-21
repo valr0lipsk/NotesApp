@@ -186,6 +186,7 @@ body {
   width: 20%;
   margin-right: 5%;
   min-height: 250px;
+  margin-bottom: 20px;
   background-color: #e7e2df;
 }
 .main .main__notes .note__header {
